@@ -14,6 +14,6 @@ Ideal para empresas en Panamá que desean tener un acceso rápido a las redes so
         'views/res_partner_views.xml',
     ],
     'installable': True,
-    'application': False,
+    'application': True,
     'license': 'LGPL-3',
 }
