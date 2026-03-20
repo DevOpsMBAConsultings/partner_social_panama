@@ -1,0 +1,215 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sttl_sale_subscription
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-08 22:32+0000\n"
+"PO-Revision-Date: 2026-03-08 22:32+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sttl_sale_subscription
+#: model:ir.model,name:sttl_sale_subscription.model_sale_order
+msgid "Sales Order"
+msgstr "Orden de Venta"
+
+#. module: sttl_sale_subscription
+#: model:ir.model.fields,field_description:sttl_sale_subscription.field_sale_order__recurrance_id
+#: model:ir.model.fields,field_description:sttl_sale_subscription.field_sale_order_line__recurrance_id
+msgid "Recurrence"
+msgstr "Recurrencia"
+
+#. module: sttl_sale_subscription
+#: model:ir.model.fields,field_description:sttl_sale_subscription.field_sale_order__recurr_until
+msgid "Until"
+msgstr "Hasta"
+
+#. module: sttl_sale_subscription
+#: model:ir.model.fields,field_description:sttl_sale_subscription.field_sale_order__next_invoice_date
+msgid "Next Invoice Date"
+msgstr "Fecha de Próxima Factura"
+
+#. module: sttl_sale_subscription
+#: model:ir.model.fields,field_description:sttl_sale_subscription.field_sale_order__recurring_started
+msgid "Recurring Started"
+msgstr "Recurrencia Iniciada"
+
+#. module: sttl_sale_subscription
+#: model:ir.model.fields,field_description:sttl_sale_subscription.field_sale_order__subscription_status
+#: model:ir.model.fields,field_description:sttl_sale_subscription.field_sale_order_line__subscription_status
+#: filter_description:sttl_sale_subscription.filter_subscription_state
+msgid "Subscription Status"
+msgstr "Estado de Suscripción"
+
+#. module: sttl_sale_subscription
+#: selection:sale.order,subscription_status:0
+#: selection:sale.order.line,subscription_status:0
+msgid "Pending"
+msgstr "Pendiente"
+
+#. module: sttl_sale_subscription
+#: selection:sale.order,subscription_status:0
+#: selection:sale.order.line,subscription_status:0
+msgid "Running"
+msgstr "En Ejecución"
+
+#. module: sttl_sale_subscription
+#: selection:sale.order,subscription_status:0
+#: selection:sale.order.line,subscription_status:0
+msgid "End"
+msgstr "Finalizado"
+
+#. module: sttl_sale_subscription
+#: model:ir.model.fields,field_description:sttl_sale_subscription.field_sale_order_line__prev_added_qty
+msgid "Previous Added Qty"
+msgstr "Cant. Previa Añadida"
+
+#. module: sttl_sale_subscription
+#: model:ir.model,name:sttl_sale_subscription.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes de Configuración"
+
+#. module: sttl_sale_subscription
+#: model:ir.model.fields,field_description:sttl_sale_subscription.field_res_config_settings__notification_days
+msgid "Subscription nofification days"
+msgstr "Días de notificación de suscripción"
+
+#. module: sttl_sale_subscription
+#: model:ir.model,name:sttl_sale_subscription.model_product_subscription_pricing
+msgid "Product Subscription Pricing"
+msgstr "Precios de Suscripción de Producto"
+
+#. module: sttl_sale_subscription
+#: model:ir.model.fields,field_description:sttl_sale_subscription.field_product_subscription_pricing__name
+#: model:ir.model.fields,field_description:sttl_sale_subscription.field_product_subscription_period__name
+#: model:ir.model.fields,field_description:sttl_sale_subscription.field_close_reason__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: sttl_sale_subscription
+#: model:ir.model.fields,field_description:sttl_sale_subscription.field_product_subscription_pricing__price
+msgid "Price"
+msgstr "Precio"
+
+#. module: sttl_sale_subscription
+#: model:ir.model.fields,field_description:sttl_sale_subscription.field_product_subscription_pricing__period_id
+msgid "Period"
+msgstr "Periodo"
+
+#. module: sttl_sale_subscription
+#: model:ir.model.fields,field_description:sttl_sale_subscription.field_product_subscription_pricing__product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: sttl_sale_subscription
+#: model:ir.model,name:sttl_sale_subscription.model_product_subscription_period
+msgid "Product Subscription Period"
+msgstr "Periodo de Suscripción de Producto"
+
+#. module: sttl_sale_subscription
+#: model:ir.model.fields,field_description:sttl_sale_subscription.field_product_subscription_period__duration
+msgid "Duration"
+msgstr "Duración"
+
+#. module: sttl_sale_subscription
+#: model:ir.model.fields,field_description:sttl_sale_subscription.field_product_subscription_period__unit
+msgid "Unit"
+msgstr "Unidad"
+
+#. module: sttl_sale_subscription
+#: selection:product.subscription.period,unit:0
+msgid "Days"
+msgstr "Días"
+
+#. module: sttl_sale_subscription
+#: selection:product.subscription.period,unit:0
+msgid "Weeks"
+msgstr "Semanas"
+
+#. module: sttl_sale_subscription
+#: selection:product.subscription.period,unit:0
+msgid "Months"
+msgstr "Meses"
+
+#. module: sttl_sale_subscription
+#: selection:product.subscription.period,unit:0
+msgid "Years"
+msgstr "Años"
+
+#. module: sttl_sale_subscription
+#: model:ir.model.fields,field_description:sttl_sale_subscription.field_product_subscription_period__price_ids
+#: view:product.template:sttl_sale_subscription.product_template_form_view_inherit
+msgid "Pricing"
+msgstr "Precios"
+
+#. module: sttl_sale_subscription
+#: model:ir.model,name:sttl_sale_subscription.model_close_reason
+msgid "Close Reason"
+msgstr "Razón de Cierre"
+
+#. module: sttl_sale_subscription
+#: model:ir.model.fields,field_description:sttl_sale_subscription.field_close_reason__desc
+msgid "Description"
+msgstr "Descripción"
+
+#. module: sttl_sale_subscription
+#: model:ir.model,name:sttl_sale_subscription.model_close_reason_wizard
+msgid "Close Reason Wizard"
+msgstr "Asistente de Razón de Cierre"
+
+#. module: sttl_sale_subscription
+#: model:ir.model.fields,field_description:sttl_sale_subscription.field_close_reason_wizard__reason_id
+msgid "Reason"
+msgstr "Razón"
+
+#. module: sttl_sale_subscription
+#: view:product.template:sttl_sale_subscription.product_template_form_view_inherit
+msgid "Time Based Pricing"
+msgstr "Precios Basados en Tiempo"
+
+#. module: sttl_sale_subscription
+#: view:res.config.settings:sttl_sale_subscription.res_config_settings_view_form_inherit
+msgid "Subscription invoice notification"
+msgstr "Notificación de factura de suscripción"
+
+#. module: sttl_sale_subscription
+#: view:sale.order:sttl_sale_subscription.view_order_form_inherit_recurring
+msgid "Create Recurring Invoices"
+msgstr "Crear Facturas Recurrentes"
+
+#. module: sttl_sale_subscription
+#: view:sale.order:sttl_sale_subscription.view_order_form_inherit_recurring
+msgid "End Subscription"
+msgstr "Finalizar Suscripción"
+
+#. module: sttl_sale_subscription
+#: view:sale.order:sttl_sale_subscription.view_order_form_inherit_recurring
+msgid "Renew Subscription"
+msgstr "Renovar Suscripción"
+
+#. module: sttl_sale_subscription
+#: view:sale.order:sttl_sale_subscription.view_order_form_inherit_recurring
+msgid "status"
+msgstr "estado"
+
+#. module: sttl_sale_subscription
+#: view:sale.order:sttl_sale_subscription.view_order_form_inherit_recurring
+msgid "Subscription Lines"
+msgstr "Líneas de Suscripción"
+
+#. module: sttl_sale_subscription
+#: view:close.reason.wizard:sttl_sale_subscription.close_reason_wizard_view_form
+msgid "Close Subscription"
+msgstr "Cerrar Suscripción"
+
+#. module: sttl_sale_subscription
+#: view:close.reason.wizard:sttl_sale_subscription.close_reason_wizard_view_form
+msgid "Cancel"
+msgstr "Cancelar"

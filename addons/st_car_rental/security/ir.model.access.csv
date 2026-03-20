@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_rental_rate_user,rental.rate.user,model_rental_rate,st_car_rental.group_rental_user,1,0,0,0
+access_rental_rate_manager,rental.rate.manager,model_rental_rate,st_car_rental.group_rental_manager,1,1,1,1
+access_rental_inspection_user,rental.inspection.user,model_rental_inspection,st_car_rental.group_rental_user,1,1,1,0
+access_rental_inspection_manager,rental.inspection.manager,model_rental_inspection,st_car_rental.group_rental_manager,1,1,1,1
+access_rental_fine_user,rental.fine.user,model_rental_fine,st_car_rental.group_rental_user,1,1,1,0
+access_rental_fine_manager,rental.fine.manager,model_rental_fine,st_car_rental.group_rental_manager,1,1,1,1
+access_rental_location_user,rental.location user,model_rental_location,base.group_user,1,1,1,1

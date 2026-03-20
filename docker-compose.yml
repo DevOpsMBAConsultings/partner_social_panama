@@ -1,0 +1,32 @@
+services:
+  odoo:
+    build: . # Esto buscará el archivo 'Dockerfile' en la misma carpeta
+    container_name: odoo19_dev
+    depends_on:
+      - db
+    ports:
+      - "8069:8069"
+      - "8072:8072"
+    volumes:
+      - ./addons:/opt/odoo/custom-addons
+      - ./odoo.conf:/etc/odoo/odoo.conf
+      - ./data/odoo-web:/var/lib/odoo
+      - ./provisioning:/opt/odoo/provisioning
+    environment:
+      - HOST=db
+      - USER=odoo
+      - PASSWORD=odoo
+
+  db:
+    image: postgres:16
+    container_name: db_odoo19
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=odoo
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data
+
+volumes:
+  odoo-db-data:

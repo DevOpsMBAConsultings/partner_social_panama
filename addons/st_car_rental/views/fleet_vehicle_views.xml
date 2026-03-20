@@ -1,0 +1,51 @@
+<odoo>
+    <record id="fleet_vehicle_view_form_inherit_rental" model="ir.ui.view">
+        <field name="name">fleet.vehicle.view.form.inherit.rental</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_rentals" type="object" class="oe_stat_button"
+                    icon="fa-car">
+                    <field name="rental_order_ids" widget="statinfo" string="Rentals" />
+                </button>
+            </xpath>
+            <xpath expr="//field[@name='driver_id']" position="after">
+                <field name="supplier_id" placeholder="Third-party Supplier (Multi-Supplier)" />
+                <field name="rental_status" widget="badge"
+                    decoration-success="rental_status == 'available'"
+                    decoration-info="rental_status == 'reserved'"
+                    decoration-warning="rental_status == 'rented'"
+                    decoration-danger="rental_status == 'maintenance'"
+                    invisible="not is_rentable" />
+                <group string="Pricing &amp; Access">
+                    <field name="rental_rate_id" />
+                    <field name="is_rentable" />
+                    <field name="accessory_product_ids" widget="many2many_tags"
+                        options="{'no_create': True}" />
+                </group>
+                <field name="current_location_id" invisible="not is_rentable" />
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Kanban inheritance to show rental status on cards -->
+    <record id="fleet_vehicle_view_kanban_inherit_rental" model="ir.ui.view">
+        <field name="name">fleet.vehicle.view.kanban.inherit.rental</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_kanban" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='model_id']" position="after">
+                <field name="rental_status" invisible="1" />
+            </xpath>
+            <xpath expr="//div[hasclass('oe_kanban_details')]" position="inside">
+                <div t-if="record.is_rentable.raw_value">
+                    <span class="badge rounded-pill float-end"
+                        t-attf-class="bg-#{record.rental_status.raw_value == 'available' ? 'success' : (record.rental_status.raw_value == 'rented' ? 'warning' : 'danger')}">
+                        <field name="rental_status" />
+                    </span>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

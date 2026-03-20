@@ -1,0 +1,55 @@
+:root {
+    --mba-primary: #1a1a1b;
+    /* Negro profundo profesional */
+    --mba-accent: #6c757d;
+    /* Gris medio */
+    --mba-bg-light: #f8f9fa;
+    /* Blanco roto / Gris muy claro */
+    --mba-text-dark: #212529;
+}
+
+.mba-hero {
+    background: linear-gradient(rgba(26, 26, 27, 0.9), rgba(26, 26, 27, 0.9));
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 120px 0;
+    text-align: center;
+}
+
+.mba-service-card {
+    border: 1px solid #eee;
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    background: #fff;
+    height: 100%;
+}
+
+.mba-service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 74, 173, 0.1);
+}
+
+.mba-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    background: rgba(0, 74, 173, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.mba-icon {
+    font-size: 2rem;
+    color: var(--mba-primary);
+}
+
+.mba-title {
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #333;
+}

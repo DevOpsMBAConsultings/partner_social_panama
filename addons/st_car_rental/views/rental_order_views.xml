@@ -1,0 +1,73 @@
+<odoo>
+    <record id="view_order_form_inherit_rental" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.rental</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_rental_pickup"
+                    string="Pick-up Vehicle" type="object"
+                    class="oe_highlight"
+                    invisible="not is_rental or state != 'sale' or vehicle_id == False" />
+                <button name="action_rental_return"
+                    string="Return Vehicle" type="object"
+                    class="oe_highlight"
+                    invisible="not is_rental or state != 'sale' or vehicle_id == False" />
+                <button name="%(st_car_rental.rental_inspection_action)d"
+                    string="New Inspection" type="action"
+                    class="oe_highlight"
+                    context="{'default_order_id': id, 'default_type': 'out'}"
+                    invisible="not is_rental or state not in ['draft', 'sent', 'sale']" />
+            </xpath>
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="is_rental" widget="boolean_toggle" />
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Rental Information" name="rental_info" invisible="not is_rental">
+                    <group>
+                        <group>
+                            <group>
+                                <field name="vehicle_id" options="{'no_create': True}" />
+                                <field name="pickup_location_id" options="{'no_create': True}"
+                                    invisible="not vehicle_id" />
+                                <field name="pickup_date" invisible="not vehicle_id" />
+                            </group>
+                            <group>
+                                <field name="return_location_id" options="{'no_create': True}"
+                                    invisible="not vehicle_id" />
+                                <field name="return_date" invisible="not vehicle_id" />
+                                <field name="duration_days"
+                                    invisible="not pickup_date or not return_date" />
+                                <field name="duration_hours"
+                                    invisible="not pickup_date or not return_date" />
+                            </group>
+                        </group>
+                        <group name="rental_status" string="Execution Status">
+                            <!-- Additional rental execution fields could go here -->
+                        </group>
+                    </group>
+                    <separator string="Inspections" />
+                    <field name="inspection_ids" readonly="1">
+                        <list>
+                            <field name="name" />
+                            <field name="type" />
+                            <field name="date" />
+                            <field name="inspector_id" />
+                            <field name="fuel_level" />
+                            <field name="cleanliness" />
+                        </list>
+                    </field>
+                    <separator string="Traffic Fines" />
+                    <field name="fine_ids" readonly="1">
+                        <list>
+                            <field name="name" />
+                            <field name="date" />
+                            <field name="amount" />
+                            <field name="state" widget="badge" />
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,67 @@
+<odoo>
+    <record id="rental_fine_view_tree" model="ir.ui.view">
+        <field name="name">rental.fine.view.tree</field>
+        <field name="model">rental.fine</field>
+        <field name="arch" type="xml">
+            <list string="Traffic Fines">
+                <field name="name" />
+                <field name="order_id" />
+                <field name="vehicle_id" />
+                <field name="date" />
+                <field name="amount" sum="Total Amount" />
+                <field name="currency_id" column_invisible="True" />
+                <field name="state" widget="badge"
+                    decoration-muted="state == 'draft'"
+                    decoration-info="state == 'confirmed'"
+                    decoration-success="state == 'paid'"
+                    decoration-warning="state == 'invoiced'" />
+            </list>
+        </field>
+    </record>
+
+    <record id="rental_fine_view_form" model="ir.ui.view">
+        <field name="name">rental.fine.view.form</field>
+        <field name="model">rental.fine</field>
+        <field name="arch" type="xml">
+            <form string="Traffic Fine">
+                <header>
+                    <button name="action_confirm" string="Confirm" type="object"
+                        class="oe_highlight" invisible="state != 'draft'" />
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,paid" />
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Fine Reference Number" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group name="source" string="Rental Source">
+                            <field name="order_id" />
+                            <field name="vehicle_id" />
+                            <field name="date" />
+                        </group>
+                        <group name="financial" string="Details">
+                            <field name="amount" />
+                            <field name="currency_id" invisible="1" />
+                        </group>
+                    </group>
+                    <group name="description">
+                        <field name="description" placeholder="Violation details..." />
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="rental_fine_action" model="ir.actions.act_window">
+        <field name="name">Traffic Fines</field>
+        <field name="res_model">rental.fine</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

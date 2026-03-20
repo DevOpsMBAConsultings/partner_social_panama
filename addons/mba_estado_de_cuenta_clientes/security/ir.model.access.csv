@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+mba_estado_de_cuenta_clientes.access_customer_statement_wizard,access_customer_statement_wizard,mba_estado_de_cuenta_clientes.model_customer_statement_wizard,mba_estado_de_cuenta_clientes.customer_statement_group,1,1,1,1
+
+
+

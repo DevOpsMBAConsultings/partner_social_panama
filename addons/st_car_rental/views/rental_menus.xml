@@ -1,0 +1,62 @@
+<odoo>
+    <!-- Main Menu Item -->
+    <menuitem id="menu_rental_root"
+        name="Car Rental"
+        web_icon="st_car_rental,static/description/icon.png"
+        sequence="25" />
+
+    <!-- Operations Menu -->
+    <menuitem id="menu_rental_operations"
+        name="Operations"
+        parent="menu_rental_root"
+        sequence="10" />
+
+    <menuitem id="menu_rental_dashboard"
+        name="Dashboard"
+        parent="menu_rental_operations"
+        action="action_rental_dashboard"
+        sequence="5" />
+
+    <menuitem id="menu_rental_calendar"
+        name="Availability Calendar"
+        parent="menu_rental_operations"
+        action="action_rental_calendar"
+        sequence="8" />
+
+    <menuitem id="menu_rental_orders"
+        name="Orders"
+        parent="menu_rental_operations"
+        action="sale.action_orders"
+        sequence="10" />
+
+    <menuitem id="menu_fleet_vehicles"
+        name="Fleet"
+        parent="menu_rental_operations"
+        action="fleet.fleet_vehicle_action"
+        sequence="20" />
+
+    <menuitem id="menu_rental_inspections"
+        name="Inspections"
+        parent="menu_rental_operations"
+        # action="rental_inspection_action"
+        sequence="30" />
+
+    <!-- Configuration Menu -->
+    <menuitem id="menu_car_rental_config"
+        name="Configuration"
+        parent="menu_car_rental_root"
+        groups="group_rental_manager"
+        sequence="100" />
+
+    <menuitem id="menu_car_rental_rates"
+        name="Pricing Rates"
+        parent="menu_car_rental_config"
+        action="rental_rate_action"
+        sequence="10" />
+
+    <menuitem id="menu_car_rental_locations"
+        name="Locations"
+        parent="menu_car_rental_config"
+        action="rental_location_action"
+        sequence="20" />
+</odoo>

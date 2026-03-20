@@ -1,0 +1,11 @@
+# Existing Odoo Databases (Found Mar 5, 2026)
+- Digifact
+- dental_hospital
+- odoo19
+- odoo19_dev
+- odoo
+- res_partner
+- infile
+- postgres
+
+Note: Use ./ls-db.sh to get an updated list at any time.

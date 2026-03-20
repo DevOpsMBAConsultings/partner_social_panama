@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <template id='service_detail_layout' name='Service Detail Layout'>
+        <t t-call='website.layout'>
+            <div id='wrap' class='oe_structure'>
+                <section class='py-5'
+                    style='background: #1a1a1b; color: white; padding-top: 100px !important;'>
+                    <div class='container text-center'>
+                        <h1 class='display-4' t-esc='title' />
+                        <div class='mx-auto mt-4'
+                            style='width: 60px; border-top: 3px solid #6c757d; opacity: 1;'></div>
+                    </div>
+                </section>
+                <section class='py-5 bg-white'>
+                    <div class='container'>
+                        <div class='row justify-content-center'>
+                            <div class='col-lg-8'>
+                                <t t-out='0' />
+                                <div class='mt-5 text-center'>
+                                    <a href='/contactus'
+                                        class='btn btn-dark btn-lg rounded-pill px-5 py-3'
+                                        style='background: #1a1a1b;'>Consultar sobre este servicio</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+
+    <record id='page_implementacion' model='website.page'>
+        <field name='name'>Implementación Odoo 19</field>
+        <field name='url'>/servicios/implementacion</field>
+        <field name='type'>qweb</field>
+        <field name='key'>website_mba_theme.page_implementacion</field>
+        <field name='arch_base' type='xml'>
+            <t t-call='website_mba_theme.service_detail_layout'>
+                <t t-set='title'>Implementación Odoo 19 Community</t>
+                <div class='mt-4'>
+                    <p class='lead'>Basamos nuestras implementaciones en los estándares más
+                        exigentes de Odoo, utilizando <strong>Oracle Cloud Infrastructure (OCI)</strong>
+                        para garantizar el máximo rendimiento.</p>
+                    <p>En el 2026 nos especializamos en Odoo 19 Community, ofreciendo soluciones que
+                        permiten a las empresas panameñas operar con tecnología de vanguardia y
+                        total independencia.</p>
+                </div>
+            </t>
+        </field>
+        <field name='is_published'>True</field>
+    </record>
+
+    <record id='page_personalizacion' model='website.page'>
+        <field name='name'>Personalización &amp; Apps</field>
+        <field name='url'>/servicios/personalizacion</field>
+        <field name='type'>qweb</field>
+        <field name='key'>website_mba_theme.page_personalizacion</field>
+        <field name='arch_base' type='xml'>
+            <t t-call='website_mba_theme.service_detail_layout'>
+                <t t-set='title'>Personalización y Desarrollo de Apps</t>
+                <div class='mt-4'>
+                    <p class='lead'>Desarrollamos módulos backend y aplicaciones (App) que reducen
+                        las demoras operativas y optimizan la experiencia de usuario.</p>
+                    <p>Personalizamos cada flujo de Odoo para que se adapte exactamente a la
+                        realidad de su negocio, eliminando cuellos de botella mediante código
+                        eficiente y arquitectura escalable.</p>
+                </div>
+            </t>
+        </field>
+        <field name='is_published'>True</field>
+    </record>
+
+    <record id='page_integracion' model='website.page'>
+        <field name='name'>Integración Total</field>
+        <field name='url'>/servicios/integracion</field>
+        <field name='type'>qweb</field>
+        <field name='key'>website_mba_theme.page_integracion</field>
+        <field name='arch_base' type='xml'>
+            <t t-call='website_mba_theme.service_detail_layout'>
+                <t t-set='title'>Integración Omnicanal y Facturación</t>
+                <div class='mt-4'>
+                    <p class='lead'>Expertos en integración con Facturación Electrónica para Panamá
+                        y plataformas de automatización avanzada.</p>
+                    <p>Conectamos su ecosistema digital (n8n, pasarelas de pago, logística) para
+                        asegurar una fluidez total de la información entre Odoo y sus herramientas
+                        de terceros.</p>
+                </div>
+            </t>
+        </field>
+        <field name='is_published'>True</field>
+    </record>
+
+    <record id='page_automatizacion' model='website.page'>
+        <field name='name'>Bots &amp; Automatización</field>
+        <field name='url'>/servicios/automatizacion</field>
+        <field name='type'>qweb</field>
+        <field name='key'>website_mba_theme.page_automatizacion</field>
+        <field name='arch_base' type='xml'>
+            <t t-call='website_mba_theme.service_detail_layout'>
+                <t t-set='title'>Bots &amp; Automatización WhatsApp</t>
+                <div class='mt-4'>
+                    <p class='lead'>Elevamos su comunicación con bots inteligentes basados en
+                        Chatwoot y n8n.</p>
+                    <p>Creamos campañas en Google diseñadas para convertir clientes potenciales
+                        mediante WhatsApp, automatizando la mensajería y asegurando una respuesta
+                        inmediata 24/7.</p>
+                </div>
+            </t>
+        </field>
+        <field name='is_published'>True</field>
+    </record>
+
+    <record id='page_localizacion' model='website.page'>
+        <field name='name'>Localización Panamá</field>
+        <field name='url'>/servicios/localizacion</field>
+        <field name='type'>qweb</field>
+        <field name='key'>website_mba_theme.page_localizacion</field>
+        <field name='arch_base' type='xml'>
+            <t t-call='website_mba_theme.service_detail_layout'>
+                <t t-set='title'>Localización y Script Panamá</t>
+                <div class='mt-4'>
+                    <p class='lead'>Poseemos un script de estandarización exclusivo que adapta Odoo
+                        al cumplimiento fiscal y legal de Panamá.</p>
+                </div>
+            </t>
+        </field>
+        <field name='is_published'>True</field>
+    </record>
+</odoo>

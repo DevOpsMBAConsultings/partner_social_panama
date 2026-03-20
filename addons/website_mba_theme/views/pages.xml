@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <template id='mba_homepage_v10' inherit_id='website.homepage' name='MBA Homepage V10'>
+        <xpath expr='//div[@id="wrap"]' position='inside'>
+            <div class='oe_structure'>
+                <section class='mba-hero o_colored_level'
+                    style='background: linear-gradient(rgba(26, 26, 27, 0.95), rgba(26, 26, 27, 0.95)); color: white; padding: 140px 0; text-align: center;'>
+                    <div class='container'>
+                        <div class='col-lg-10 offset-lg-1'>
+                            <h1 style='font-size: 64px; font-weight: 800; letter-spacing: -1px;'>MBA
+                                Consultings</h1>
+                            <h2 style='color: #adb5bd; font-weight: 400;'>Estrategia y
+                                Transformación Digital</h2>
+                            <p class='lead mt-3' style='color: #dee2e6;'>Especialistas en Odoo 19
+                                Community sobre Oracle Cloud Infrastructure (OCI).</p>
+                            <div class='pt16 pb16'>
+                                <hr class='mx-auto'
+                                    style='width: 60px; border-top: 3px solid #6c757d !important; opacity: 1;' />
+                            </div>
+                            <a href='/contactus'
+                                class='btn btn-lg btn-outline-light rounded-pill px-5 py-3 mt-4'
+                                style='border-width: 2px; font-weight: 700;'>Iniciar Consultoría</a>
+                        </div>
+                    </div>
+                </section>
+                <section class='py-5 bg-white'>
+                    <div class='container'>
+                        <div class='text-center mb-5'>
+                            <h2
+                                style='color: #1a1a1b; font-weight: 800; text-transform: uppercase; letter-spacing: 2px;'>Nuestros
+                                Servicios</h2>
+                            <div
+                                style='width: 40px; height: 3px; background: #6c757d; margin: 15px auto;'></div>
+                            <p class='text-muted'>Soluciones de alto estándar para el éxito
+                                empresarial en Panamá.</p>
+                        </div>
+                        <div class='row'>
+                            <t t-set='services'
+                                t-value='[
+                                ("Implementación", "fa-rocket", "Odoo 19 sobre OCI con estándares internacionales.", "/servicios/implementacion"),
+                                ("Personalización", "fa-code", "Módulos backend y apps para optimizar procesos.", "/servicios/personalizacion"),
+                                ("Integración Total", "fa-plug", "Facturación electrónica, n8n y plataformas externas.", "/servicios/integracion"),
+                                ("Bots &amp; WhatsApp", "fa-whatsapp", "Automatización conversacional con Chatwoot y n8n.", "/servicios/automatizacion"),
+                                ("Localización Panamá", "fa-map-marker", "Script de estandarización fiscal y legal propio.", "/servicios/localizacion"),
+                                ("Soporte Corporativo", "fa-life-ring", "Asistencia técnica prioritaria para su estabilidad.", "/contactus"),
+                                ("Web &amp; eCommerce", "fa-desktop", "Interfaces premium para experiencia de usuario superior.", "/contactus"),
+                                ("Capacitación", "fa-graduation-cap", "Entrenamiento práctico enfocado en el uso de Odoo.", "/contactus")
+                            ]' />
+                            <t t-foreach='services' t-as='service'>
+                                <div class='col-lg-3 col-md-6 mb-4'>
+                                    <a t-att-href='service[3]' class='text-decoration-none'>
+                                        <div class='mba-service-card text-center'>
+                                            <div class='mba-icon'>
+                                                <i t-attf-class='fa #{service[1]}'></i>
+                                            </div>
+                                            <h4 class='mba-title' t-esc='service[0]' />
+                                            <p class='text-muted small mb-0' t-esc='service[2]' />
+                                        </div>
+                                    </a>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </section>
+                <section class='py-5 bg-light'>
+                    <div class='container'>
+                        <div class='text-center mb-5'>
+                            <h3 style='color: #1a1a1b; font-weight: 800; text-transform: uppercase;'>Soluciones
+                                por Industria</h3>
+                            <p class='text-muted'>Módulos especializados para verticales de negocio
+                                en Panamá.</p>
+                        </div>
+                        <div class='row justify-content-center'>
+                            <div class='col-lg-2 col-md-4 text-center mb-4'>
+                                <i class='fa fa-wrench fa-2x mb-2' style='color: #6c757d;'></i>
+                                <h5 style='font-weight: 700;'>Talleres</h5>
+                            </div>
+                            <div class='col-lg-2 col-md-4 text-center mb-4'>
+                                <i class='fa fa-user-md fa-2x mb-2' style='color: #6c757d;'></i>
+                                <h5 style='font-weight: 700;'>Clínicas</h5>
+                            </div>
+                            <div class='col-lg-2 col-md-4 text-center mb-4'>
+                                <i class='fa fa-balance-scale fa-2x mb-2' style='color: #6c757d;'></i>
+                                <h5 style='font-weight: 700;'>Abogados</h5>
+                            </div>
+                            <div class='col-lg-2 col-md-4 text-center mb-4'>
+                                <i class='fa fa-car fa-2x mb-2' style='color: #6c757d;'></i>
+                                <h5 style='font-weight: 700;'>Rent-a-car</h5>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </xpath>
+    </template>
+</odoo>

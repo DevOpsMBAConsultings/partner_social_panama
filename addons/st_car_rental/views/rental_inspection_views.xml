@@ -1,0 +1,64 @@
+<odoo>
+    <record id="rental_inspection_view_tree" model="ir.ui.view">
+        <field name="name">rental.inspection.view.tree</field>
+        <field name="model">rental.inspection</field>
+        <field name="arch" type="xml">
+            <list string="Inspections">
+                <field name="name" />
+                <field name="order_id" />
+                <field name="vehicle_id" />
+                <field name="type" widget="badge"
+                    decoration-warning="type == 'out'"
+                    decoration-info="type == 'in'" />
+                <field name="date" />
+                <field name="inspector_id" />
+                <field name="fuel_level" />
+                <field name="cleanliness" />
+            </list>
+        </field>
+    </record>
+
+    <record id="rental_inspection_view_form" model="ir.ui.view">
+        <field name="name">rental.inspection.view.form</field>
+        <field name="model">rental.inspection</field>
+        <field name="arch" type="xml">
+            <form string="Rental Inspection">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group name="info" string="Context">
+                            <field name="order_id" readonly="context.get('default_order_id')" />
+                            <field name="vehicle_id" />
+                            <field name="type" widget="radio" options="{'horizontal': true}" />
+                            <field name="date" />
+                        </group>
+                        <group name="inspector" string="Details">
+                            <field name="inspector_id" />
+                            <field name="fuel_level" />
+                            <field name="cleanliness" />
+                        </group>
+                    </group>
+                    <group name="checks" string="Inspection Checklist">
+                        <field name="damage_description" placeholder="Describe any new damage..." />
+                        <field name="notes" placeholder="General observation..." />
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="rental_inspection_action" model="ir.actions.act_window">
+        <field name="name">Inspections</field>
+        <field name="res_model">rental.inspection</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>
