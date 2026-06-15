@@ -5,7 +5,7 @@
     'category': 'Sales/CRM',
     'summary': 'Agrega enlaces de Facebook, Instagram y LinkedIn a los contactos.',
     'description': """
-Módulo para agregar campos de redes sociales a los contactos en Odoo 19.
+Módulo para agregar campos de redes sociales a los contactos en Odoo 18 y 19.
 Ideal para empresas en Panamá que desean tener un acceso rápido a las redes sociales de sus clientes.
     """,
     'author': 'Brooks González / Antigravity',
